@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +32,18 @@
     transform: rotate(360deg);
   }
 }
+
+.title{
+  text-align: center;
+}
+
+#hero{
+  
+}
+
+.align{
+  align-self: center;
+}
+
+
+/* Begin my css styling */

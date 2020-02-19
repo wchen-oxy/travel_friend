@@ -10,7 +10,7 @@ class LocationTable extends React.Component {
         
         <div class="title">
            {this.props.selectedCity.name}
-           </div>
+        </div>
            
       );
     }

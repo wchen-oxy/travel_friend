@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import LocationDiscoveryWindow from './SubComponents/LocationDiscoveryWindowComponent.js';
+import LocationDiscoveryWindow from './Components/LocationDiscoveryWindowComponent.js';
 
 function App() {
   return (

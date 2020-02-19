@@ -2,9 +2,6 @@ import React from 'react';
 import Select from 'react-select';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
-
 class LocationSearch extends React.Component {
     constructor(props) {
         super(props);
@@ -42,17 +39,12 @@ class LocationSearch extends React.Component {
 
     render() {
         return (
-            //put the search bar here
-            // <div className=" mt-4 col-md-8 ">
-
             <Select
                 onChange={this.handleSelect}
                 filterOption={this.customFilter}
                 getOptionLabel={option => `${option.name}`}
                 getOptionValue={option => `${option.href}`}
                 options={this.props.cities} />
-
-
         );
     }
 }
@@ -63,7 +55,6 @@ function getFeed(raw) {
             return raw[key];
         }
     }
-
     return null;
 }
 

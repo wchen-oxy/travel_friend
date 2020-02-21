@@ -18,16 +18,16 @@ class LocationDiscoveryWindow extends React.Component {
     this.state = {
       all_cities: null,
       selected_city: null,
+      selected_city_full_name: null,
       selected_city_scores: null,
       selected_city_details: null
     }
-
-
   }
 
-  handleCitySelection(city, scores, details) {
+  handleCitySelection(city, city_full_name, scores, details) {
     this.setState({
       selected_city: city,
+      selected_city_full_name: city_full_name,
       selected_city_scores: scores,
       selected_city_details: details
     })
@@ -38,18 +38,28 @@ class LocationDiscoveryWindow extends React.Component {
   }
 
   render() {
-    console.log(this.state.selected_city);
-    console.log(this.state.selected_city_scores);
-    console.log(this.state.selected_city_details);
+    console.log("render");
+    // console.log(this.state.selected_city_scores);
+    // console.log(this.state.selected_city_details);
 
     return (
       <div style={main_container}>
-        <LocationSearch onCitySelect={this.handleCitySelection} cities={this.state.all_cities} />
-        <LocationTable selectedCity={this.state.selected_city}  selectedCityScores={this.state.selected_city_scores} selectedCityDetails={this.state.selected_city_details} />
+        <LocationSearch 
+        onCitySelect={this.handleCitySelection} 
+        cities={this.state.all_cities} />
+        <LocationTable 
+        selectedCity={this.state.selected_city}  
+        selectedCityFullName={this.state.selected_city_full_name}
+        selectedCityScores={this.state.selected_city_scores} 
+        selectedCityDetails={this.state.selected_city_details} 
+        />
         <Fetch onCityUpdate={this.handleCityUpdate} />
       </div>
     );
   }
 }
+
+
+
 
 export default LocationDiscoveryWindow;

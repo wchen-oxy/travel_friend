@@ -2,16 +2,20 @@ import React from 'react';
 import Select from 'react-select';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+
 class LocationSearch extends React.Component {
     constructor(props) {
         super(props);
         this.customFilter = this.customFilter.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
+       
 
     }
 
     handleSelect(city) {
         const urls = [
+            city.href,
             city.href + "scores/",
             city.href + "details/"
         ]
@@ -22,7 +26,7 @@ class LocationSearch extends React.Component {
         ))
             .then(data => {
                
-                this.props.onCitySelect(city, data[0], data[1]);
+                this.props.onCitySelect(city, data[0], data[1], data[2]);
             })
     }
     customFilter(option, searchText) {
@@ -50,12 +54,12 @@ class LocationSearch extends React.Component {
 }
 
 function getFeed(raw) {
+  
     for (var key in raw) {
-        if (key === "categories") {
-            return raw[key];
-        }
+        if (key ===  "full_name") return raw[key];
+        if (key === "categories") return raw[key];
     }
     return null;
-}
+  }
 
 export default LocationSearch;

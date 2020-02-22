@@ -2,6 +2,10 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+const options = {
+  paddingBottom: '10%'
+}
+
 class LocationOverview extends React.Component {
 
 
@@ -22,7 +26,7 @@ class LocationOverview extends React.Component {
 
 
     return (
-      <div>
+      <div style={options}>
         {/* climate sentence */}
         
           <span>The city of {this.props.selectedCity.name} </span> {weather_type && <span>has a {weather_type} </span>} 

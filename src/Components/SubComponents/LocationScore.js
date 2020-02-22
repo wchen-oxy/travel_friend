@@ -3,6 +3,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import ApexChart from './gaugeChart';
 
+const options = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: 'center'
+
+}
+
+const textOption = {
+  textAlign: 'center'
+}
+
+const scoreContainer = {
+  paddingTop: '5%',
+  paddingBottom: '5%'
+}
 class LocationScore extends React.Component {
 
     render() {
@@ -65,20 +80,21 @@ class LocationScore extends React.Component {
 
   function setInfo(item){
     return (
-    <div>
-      <p className="score-category">
+    <div style={scoreContainer}>
+      <p style={textOption}>
         {item.name==="Connectivity"||item.name==="Commute" ? 
         (item.name==="Connectivity" ? (<span>Public Transportation Access</span>):(<span>Traffic</span>))
         :(item.name)} 
       </p>
-      <div> 
-      <ApexChart score={item.score_out_of_10 * 10} width="500"/>
+
+      <div style={options}> 
+      <ApexChart score={item.score_out_of_10 * 10} />
       </div>
      
-      
+{/*       
       <p>  
         {Math.round(item.score_out_of_10 * 10)/10}
-      </p>
+      </p> */}
     </div>
       
       )

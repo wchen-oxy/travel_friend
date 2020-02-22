@@ -1,6 +1,10 @@
 import ReactApexChart from 'react-apexcharts'
 import React from 'react';
 
+const chart_container = {
+    width: "300px",
+    height: "150px"
+}
   class ApexChart extends React.Component {
     constructor(props) {
       super(props);
@@ -10,7 +14,8 @@ import React from 'react';
         options: {
           chart: {
             type: 'radialBar',
-            offsetY: -20
+            offsetY: -10,
+            
           },
           plotOptions: {
             radialBar: {
@@ -19,7 +24,7 @@ import React from 'react';
               track: {
                 background: "#e7e7e7",
                 strokeWidth: '97%',
-                margin: 5, // margin is in pixels
+                margin: 1, // margin is in pixels
                 dropShadow: {
                   enabled: true,
                   top: 2,
@@ -72,7 +77,7 @@ import React from 'react';
         
         
 
-<div id="chart">
+<div style={chart_container}>
 <ReactApexChart options={this.state.options} series={wrapper} type="radialBar" />
 </div>
 

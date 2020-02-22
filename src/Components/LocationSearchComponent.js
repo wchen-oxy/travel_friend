@@ -2,8 +2,6 @@ import React from 'react';
 import Select from 'react-select';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
 class LocationSearch extends React.Component {
     constructor(props) {
         super(props);
@@ -45,6 +43,7 @@ class LocationSearch extends React.Component {
         return (
             <Select
                 onChange={this.handleSelect}
+               
                 filterOption={this.customFilter}
                 getOptionLabel={option => `${option.name}`}
                 getOptionValue={option => `${option.href}`}

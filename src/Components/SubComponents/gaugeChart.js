@@ -71,16 +71,12 @@ const chart_container = {
   
 
     render() {
-        console.log(this.props.score);
         const wrapper = [this.props.score];
       return (
-        
-        
-
+         
 <div style={chart_container}>
 <ReactApexChart options={this.state.options} series={wrapper} type="radialBar" />
 </div>
-
       );
     }
   }

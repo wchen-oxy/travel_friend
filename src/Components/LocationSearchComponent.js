@@ -7,8 +7,6 @@ class LocationSearch extends React.Component {
         super(props);
         this.customFilter = this.customFilter.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
-       
-
     }
 
     handleSelect(city) {
@@ -22,9 +20,8 @@ class LocationSearch extends React.Component {
                 .then(raw => raw.json())
                 .then(data => getFeed(data))     
         ))
-            .then(data => {
-               
-                this.props.onCitySelect(city, data[0], data[1], data[2]);
+            .then(data => {             
+                this.props.onCitySelect(this.props.index, city, data[0], data[1], data[2]);
             })
     }
     customFilter(option, searchText) {
@@ -40,15 +37,28 @@ class LocationSearch extends React.Component {
     }
 
     render() {
+        if (this.props.selected_city) 
         return (
             <Select
                 onChange={this.handleSelect}
-               
                 filterOption={this.customFilter}
                 getOptionLabel={option => `${option.name}`}
                 getOptionValue={option => `${option.href}`}
-                options={this.props.cities} />
+                options={this.props.cities}
+                defaultValue={this.props.selected_city}
+                />
         );
+        else {
+            return (
+            <Select
+                onChange={this.handleSelect}
+                filterOption={this.customFilter}
+                getOptionLabel={option => `${option.name}`}
+                getOptionValue={option => `${option.href}`}
+                options={this.props.cities} 
+                />
+                );
+        }
     }
 }
 

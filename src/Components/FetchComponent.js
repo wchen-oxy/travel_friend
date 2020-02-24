@@ -5,12 +5,12 @@ const apiUrl = "https://api.teleport.org/api";
 const urbanUrlPart = "/urban_areas/";
 
 class Fetch extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cities: [],
-    }
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     cities: [],
+  //   }
+  // }
 
   componentDidMount() {
     fetch(apiUrl + urbanUrlPart)

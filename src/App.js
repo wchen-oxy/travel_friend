@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Fetch from './Components/FetchComponent.js';
+
 
 import LocationDiscoveryWindow from './Components/LocationDiscoveryWindowComponent.js';
 const toggle = {
@@ -24,23 +26,22 @@ class App extends React.Component {
     super(props);
     this.handleSingleClick = this.handleSingleClick.bind(this);
     this.handleDoubleClick = this.handleDoubleClick.bind(this);
+    this.handleCityUpdate = this.handleCityUpdate.bind(this);
+    this.handleCitySelection = this.handleCitySelection.bind(this);
 
     this.state = {
       is_single_view: true,
-      first_window : {
-        all_cities: null,
-      selected_city: null,
-      selected_city_full_name: null,
-      selected_city_scores: null,
-      selected_city_details: null,
-      },
-      second_window : {
-        all_cities: null,
-      selected_city: null,
-      selected_city_full_name: null,
-      selected_city_scores: null,
-      selected_city_details: null,
-      }
+      all_cities: null,
+      //FIRST WINDOW
+      first_window_selected_city: null,
+      first_window_selected_city_full_name: null,
+      first_window_selected_city_scores: null,
+      first_window_selected_city_details: null,
+      //SECOND WINDOW
+      second_window_selected_city: null,
+      second_window_selected_city_full_name: null,
+      second_window_selected_city_scores: null,
+      second_window_selected_city_details: null,
 
     }
   }
@@ -53,6 +54,30 @@ class App extends React.Component {
     this.setState({ is_single_view: true })
   }
 
+  handleCitySelection(index, city, city_full_name, scores, details) {
+    if (index === 1) {
+      this.setState({
+        first_window_selected_city: city,
+        first_window_selected_city_full_name: city_full_name,
+        first_window_selected_city_scores: scores,
+        first_window_selected_city_details: details
+      });
+    }
+
+    else if (index === 2) {
+      this.setState({
+        second_window_selected_city: city,
+        second_window_selected_city_full_name: city_full_name,
+        second_window_selected_city_scores: scores,
+        second_window_selected_city_details: details
+      })
+    }
+  }
+
+  handleCityUpdate(cities) {
+    this.setState({ all_cities: cities });
+  }
+
   render() {
     let button;
     let main_container;
@@ -60,8 +85,16 @@ class App extends React.Component {
     if (this.state.is_single_view) {
       button = <ToggleSingleButton onClick={this.handleSingleClick} />;
       main_container = (
-      <div style={window_options}>
-        <LocationDiscoveryWindow/>
+        <div style={window_options}>
+          <LocationDiscoveryWindow
+            index={1}
+            all_cities={this.state.all_cities}
+            selected_city={this.state.first_window_selected_city}
+            selected_city_full_name={this.state.first_window_selected_city_full_name}
+            selected_city_scores={this.state.first_window_selected_city_scores}
+            selected_city_details={this.state.first_window_selected_city_details}
+            handleCitySelection={this.handleCitySelection}
+          />
         </div>)
 
     }
@@ -69,13 +102,29 @@ class App extends React.Component {
       button = <ToggleDoubleButton onClick={this.handleDoubleClick} />;
       main_container = (<div style={main_container_options}>
         <div style={window_options}>
-        <LocationDiscoveryWindow/>
+          <LocationDiscoveryWindow
+            index={1}
+            all_cities={this.state.all_cities}
+            selected_city={this.state.first_window_selected_city}
+            selected_city_full_name={this.state.first_window_selected_city_full_name}
+            selected_city_scores={this.state.first_window_selected_city_scores}
+            selected_city_details={this.state.first_window_selected_city_details}
+            handleCitySelection={this.handleCitySelection}
+          />
         </div>
         <div style={window_options}>
-        <LocationDiscoveryWindow/>
+          <LocationDiscoveryWindow
+            index={2}
+            all_cities={this.state.all_cities}
+            selected_city={this.state.second_window_selected_city}
+            selected_city_full_name={this.state.second_window_selected_city_full_name}
+            selected_city_scores={this.state.second_window_selected_city_scores}
+            selected_city_details={this.state.second_window_selected_city_details}
+            handleCitySelection={this.handleCitySelection}
+          />
         </div>
-        </div>);
-      
+      </div>);
+
     }
     return (
       <div className="App">
@@ -94,10 +143,11 @@ class App extends React.Component {
           Learn React
         </a>
       </header> */}
-      <div style={toggle}>
-        {button}
+        <div style={toggle}>
+          {button}
         </div>
         {main_container}
+        <Fetch onCityUpdate={this.handleCityUpdate} />
       </div>
 
 

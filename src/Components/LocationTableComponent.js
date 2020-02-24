@@ -7,14 +7,13 @@ import LocationScore from "./SubComponents/LocationScore"
 class LocationTable extends React.Component {
  
     render() {
-      if (!this.props.selectedCityDetails || !this.props.selectedCityScores) return null;
-     
+      if (!this.props.selected_city_details || !this.props.selected_city_scores) return null; 
       return (
         <div className="Table" >
-           {this.props.selectedCityFullName}
-           <LocationOverview selectedCity={this.props.selectedCity} selectedCityDetails={this.props.selectedCityDetails}/>
+           {this.props.selected_city_full_name}
+           <LocationOverview selected_city={this.props.selected_city} selected_city_details={this.props.selected_city_details}/>
            <h3>City Ratings</h3>
-           <LocationScore selectedCityScores={this.props.selectedCityScores}/>
+           <LocationScore selected_city_scores={this.props.selected_city_scores} />
         </div>
       );
     }

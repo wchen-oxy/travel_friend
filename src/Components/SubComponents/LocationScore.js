@@ -29,9 +29,8 @@ class LocationScore extends React.Component {
       let env_quality;
       let tolerance;
       let outdoors;
-      console.log(this.props.selectedCityScores)
 
-      for (let cur of this.props.selectedCityScores){
+      for (let cur of this.props.selected_city_scores){
         switch (cur.name){
           case("Housing"):
             housing = setInfo(cur);

@@ -10,10 +10,12 @@ class LocationSearch extends React.Component {
     }
 
     handleSelect(city) {
+        console.log(city.href);
         const urls = [
             city.href,
             city.href + "scores/",
-            city.href + "details/"
+            city.href + "details/",
+            city.href + "images/"
         ]
         Promise.all(urls.map(url =>
             fetch(url)
@@ -21,7 +23,7 @@ class LocationSearch extends React.Component {
                 .then(data => getFeed(data))     
         ))
             .then(data => {             
-                this.props.onCitySelect(this.props.index, city, data[0], data[1], data[2]);
+                this.props.onCitySelect(this.props.index, city, data[0], data[1], data[2], data[3]);
             })
     }
     customFilter(option, searchText) {
@@ -67,7 +69,8 @@ function getFeed(raw) {
     for (var key in raw) {
         if (key ===  "full_name") return raw[key];
         if (key === "categories") return raw[key];
-    }
+        if (key === "photos") return raw[key][0]["image"]["web"];}
+    
     return null;
   }
 

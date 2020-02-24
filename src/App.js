@@ -37,11 +37,13 @@ class App extends React.Component {
       first_window_selected_city_full_name: null,
       first_window_selected_city_scores: null,
       first_window_selected_city_details: null,
+      first_window_selected_city_image_url: null,
       //SECOND WINDOW
       second_window_selected_city: null,
       second_window_selected_city_full_name: null,
       second_window_selected_city_scores: null,
       second_window_selected_city_details: null,
+      second_window_selected_city_image_url: null
 
     }
   }
@@ -54,13 +56,14 @@ class App extends React.Component {
     this.setState({ is_single_view: true })
   }
 
-  handleCitySelection(index, city, city_full_name, scores, details) {
+  handleCitySelection(index, city, city_full_name, scores, details, image_url) {
     if (index === 1) {
       this.setState({
         first_window_selected_city: city,
         first_window_selected_city_full_name: city_full_name,
         first_window_selected_city_scores: scores,
-        first_window_selected_city_details: details
+        first_window_selected_city_details: details,
+        first_window_selected_city_image_url: image_url
       });
     }
 
@@ -69,7 +72,8 @@ class App extends React.Component {
         second_window_selected_city: city,
         second_window_selected_city_full_name: city_full_name,
         second_window_selected_city_scores: scores,
-        second_window_selected_city_details: details
+        second_window_selected_city_details: details,
+        second_window_selected_city_image_url: image_url
       })
     }
   }
@@ -93,6 +97,7 @@ class App extends React.Component {
             selected_city_full_name={this.state.first_window_selected_city_full_name}
             selected_city_scores={this.state.first_window_selected_city_scores}
             selected_city_details={this.state.first_window_selected_city_details}
+            selected_city_image_url={this.state.first_window_selected_city_image_url}
             handleCitySelection={this.handleCitySelection}
           />
         </div>)
@@ -109,6 +114,7 @@ class App extends React.Component {
             selected_city_full_name={this.state.first_window_selected_city_full_name}
             selected_city_scores={this.state.first_window_selected_city_scores}
             selected_city_details={this.state.first_window_selected_city_details}
+            selected_city_image_url={this.state.first_window_selected_city_image_url}
             handleCitySelection={this.handleCitySelection}
           />
         </div>
@@ -120,6 +126,7 @@ class App extends React.Component {
             selected_city_full_name={this.state.second_window_selected_city_full_name}
             selected_city_scores={this.state.second_window_selected_city_scores}
             selected_city_details={this.state.second_window_selected_city_details}
+            selected_city_image_url={this.state.second_window_selected_city_image_url}
             handleCitySelection={this.handleCitySelection}
           />
         </div>

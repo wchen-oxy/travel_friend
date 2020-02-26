@@ -3,8 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const options = {
-  paddingBottom: '10%',
-  height: '150px'
+  
+  
 }
 
 class LocationOverview extends React.Component {
@@ -32,15 +32,6 @@ class LocationOverview extends React.Component {
     );
   }
 }
-
-// function getFeed(raw) {
-
-//   for (var key in raw) {
-//     if (key === "full_name") return raw[key];
-//     if (key === "categories") return raw[key];
-//   }
-//   return null;
-// }
 
 function getInfo(feed, category, sub_category, return_type) {
 

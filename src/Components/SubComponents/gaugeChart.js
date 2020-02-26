@@ -1,10 +1,7 @@
 import ReactApexChart from 'react-apexcharts'
 import React from 'react';
 
-const chart_container = {
-    width: "300px",
-    height: "150px"
-}
+
   class ApexChart extends React.Component {
     constructor(props) {
       super(props);
@@ -50,7 +47,7 @@ const chart_container = {
             }
           },
           fill: {
-            colors: "#5db0fe",
+            colors: "#ff7f00",
             type: 'solid',
             gradient: {
               shade: 'light',
@@ -74,9 +71,9 @@ const chart_container = {
         const wrapper = [this.props.score];
       return (
          
-<div style={chart_container}>
+
 <ReactApexChart options={this.state.options} series={wrapper} type="radialBar" />
-</div>
+
       );
     }
   }

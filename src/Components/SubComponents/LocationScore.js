@@ -1,7 +1,14 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import ApexChart from './gaugeChart';
+import ApexChart from './GaugeChart';
+
+const wrap = {
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: 'wrap',
+  justifyContent: 'center'
+}
 
 const options = {
   display: "flex",
@@ -16,7 +23,10 @@ const textOption = {
 
 const scoreContainer = {
   paddingTop: '5%',
-  paddingBottom: '5%'
+  paddingBottom: '5%',
+  width: '300px',
+  height: '252.59px'
+  
 }
 class LocationScore extends React.Component {
 
@@ -29,6 +39,7 @@ class LocationScore extends React.Component {
       let env_quality;
       let tolerance;
       let outdoors;
+      let leisure_culture;
 
       for (let cur of this.props.selected_city_scores){
         switch (cur.name){
@@ -56,21 +67,23 @@ class LocationScore extends React.Component {
           case("Outdoors"):
             outdoors = setInfo(cur);
             break;
+          case("Leisure & Culture"):
+            leisure_culture = setInfo(cur);
+            break;
           default:
-            
         }
       }
 
      return (    
-      <div>
+      <div className="Outer Score Container" style={wrap}>
+        {leisure_culture}
+        {living_cost}
+        {outdoors}
         {housing}
         {travel_connectivity}
-        {living_cost}
+        {safety}
         {commute}
-        {safety}
         {tolerance}
-        {outdoors}
-        {safety}
         {env_quality}
       </div>
       );
@@ -79,14 +92,14 @@ class LocationScore extends React.Component {
 
   function setInfo(item){
     return (
-    <div style={scoreContainer}>
+    <div className="Score Container" style={scoreContainer}>
       <p style={textOption}>
         {item.name==="Connectivity"||item.name==="Commute" ? 
         (item.name==="Connectivity" ? (<span>Public Transportation Access</span>):(<span>Traffic</span>))
         :(item.name)} 
       </p>
 
-      <div style={options}> 
+      <div className="Score" style={options}> 
       <ApexChart score={item.score_out_of_10 * 10} />
       </div>
      

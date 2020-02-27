@@ -1,36 +1,13 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './LocationScore.css';
 import ApexChart from './GaugeChart';
 
-const wrap = {
-  display: "flex",
-  flexDirection: "row",
-  flexWrap: 'wrap',
-  justifyContent: 'center'
-}
-
-const options = {
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: 'center'
-
-}
-
-const textOption = {
-  textAlign: 'center'
-}
-
-const scoreContainer = {
-  paddingTop: '5%',
-  paddingBottom: '5%',
-  width: '300px',
-  height: '252.59px'
-  
-}
 class LocationScore extends React.Component {
 
     render() {
+      let scoresContainer = 'Scores-container';
+
       let housing;
       let living_cost;
       let travel_connectivity;
@@ -75,7 +52,7 @@ class LocationScore extends React.Component {
       }
 
      return (    
-      <div className="Outer Score Container" style={wrap}>
+      <div className={scoresContainer}>
         {leisure_culture}
         {living_cost}
         {outdoors}
@@ -91,15 +68,18 @@ class LocationScore extends React.Component {
   }
 
   function setInfo(item){
+    let singleScoreContainer = 'Single-score-container';
+    let score = 'Score';
+    let scoreTitle = 'Score-title';
     return (
-    <div className="Score Container" style={scoreContainer}>
-      <h4 style={textOption}>
+    <div className={singleScoreContainer} >
+      <h4 className={scoreTitle}>
         {item.name==="Connectivity"||item.name==="Commute" ? 
         (item.name==="Connectivity" ? (<span>Public Transportation Access</span>):(<span>Traffic</span>))
         :(item.name)} 
       </h4>
 
-      <div className="Score" style={options}> 
+      <div className={score}> 
       <ApexChart score={item.score_out_of_10 * 10} />
       </div>
      

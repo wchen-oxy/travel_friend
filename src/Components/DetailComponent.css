@@ -1,0 +1,38 @@
+.Background {
+    height: 100vh;
+    background: #3D348B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Outer-detail-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   
+    
+}
+
+.Inner-detail-container{
+    width: 450px;
+    text-align: center;
+    color: "#3A3042";
+    background-color: white;
+    border-radius: 12px;
+    margin: 3vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 3vh;
+    padding-right: 3vh
+}
+
+.Title{
+    padding-bottom: 2vh;
+    color: black;
+}
+
+.Return-button {
+    margin: 0px 20px;
+}

@@ -1,0 +1,14 @@
+.Outer-select-container {
+    display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding-top: 2vh;
+}
+
+.Inner-select-container{
+    width: 60%;
+}
+
+.Information-container{
+    padding: 5%;
+}

@@ -1,0 +1,25 @@
+.Scores-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Single-score-container {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 300px;
+    height: 252.59px
+    
+
+}
+
+.Score {
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
+
+.Score-title{
+    text-align: center;
+}

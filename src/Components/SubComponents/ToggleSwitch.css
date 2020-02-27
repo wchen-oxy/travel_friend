@@ -3,3 +3,13 @@
     vertical-align: middle;
     margin-left: 4px;
   }
+
+  .Button-title {
+    color: white;
+  }
+
+  .Toggle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }

@@ -2,36 +2,20 @@ import React from 'react';
 import Switch from "react-switch";
 import './ToggleSwitch.css';
 
-const label_style={
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center'
-
-}
-
-const font={
-color: 'white'
-}
 export default class BasicExample extends React.Component {
-    // constructor() {
-    //     super();
-    //     this.state = { checked: false };
-    //     this.handleChange = this.handleChange.bind(this);
-    // }
-
-    // handleChange(checked) {
-    //     this.setState({ checked });
-    // }
 
     render() {
+        let font = 'Button-title';
+        let toggle = 'Toggle';
         return (
-            <label htmlFor="icon-switch" style={label_style}>
-                <span style={font}>View Mode</span>
+            <label htmlFor="icon-switch" className={toggle}>
+                <span className={font}>View Mode</span>
                 <Switch
                     height={35}
                     width={90}
                     checked={this.props.checked}
-                    offColor={'#E0E2DB'}
+                    offHandleColor={"#ff7f00"}
+                    offColor={'#ffffff'}
                     onColor={'#ff7f00'}
                     onChange={this.props.onChecked}
                     uncheckedIcon={
@@ -42,7 +26,7 @@ export default class BasicExample extends React.Component {
                                 alignItems: "center",
                                 height: "100%",
                                 fontSize: 15,
-                                color: "black",
+                                color: "#ff7f00",
                                 paddingRight: 7,
                                
                             }}>

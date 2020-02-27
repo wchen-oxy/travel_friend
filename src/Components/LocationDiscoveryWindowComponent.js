@@ -1,30 +1,17 @@
 import React from 'react';
 import LocationSearch from './LocationSearchComponent.js';
 import LocationTable from './LocationTableComponent.js';
-
+import './LocationDiscoveryWindowComponent.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
-const inner_select_container = {
-  width: "60%"
-}
-
-const table_container = {
-  padding: "5%"
-}
 
 class LocationDiscoveryWindow extends React.Component {
   image_url: "https://upload.wikimedia.org/wikipedia/commons/f/f5/EarthRender.png"
   render() {
-
-    let outer_select_container = {
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: 'center',
-      paddingTop: '2vh'
-
-    }
+    let outerSelectContainer = 'Outer-select-container';
+    let innerSelectContainer = 'Inner-select-container';
+    let informationContainer = 'Information-container';
     let location_table = null;
+
     if (this.props.selected_city) {
 
       location_table = (
@@ -37,8 +24,8 @@ class LocationDiscoveryWindow extends React.Component {
     }
     return (
       <React.Fragment>
-        <div style={outer_select_container}>
-          <div style={inner_select_container}>
+        <div className={outerSelectContainer} >
+          <div className={innerSelectContainer} >
             <LocationSearch
               index={this.props.index}
               onCitySelect={this.props.handleCitySelection}
@@ -47,11 +34,9 @@ class LocationDiscoveryWindow extends React.Component {
             />
           </div>
         </div>
-        <div style={table_container}>
+        <div className={informationContainer}>
           {location_table}
         </div>
-
-
       </React.Fragment>
     );
   }

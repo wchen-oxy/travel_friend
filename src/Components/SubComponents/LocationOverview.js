@@ -2,11 +2,6 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-const options = {
-  
-  
-}
-
 class LocationOverview extends React.Component {
 
 
@@ -21,7 +16,7 @@ class LocationOverview extends React.Component {
     // const currency = getInfo(this.props.selected_city_details, "ECONOMY", "CURRENCY-URBAN-AREA", "string_acronym_value");
     const languages = getInfo(this.props.selected_city_details, "LANGUAGE", "SPOKEN-LANGUAGES", "string_list_value");
     return (
-      <div style={options}>
+      <div>
         {/* climate sentence */}
 
         <span>The city of {this.props.selected_city.name} </span> {weather_type && <span>has a {weather_type} </span>}

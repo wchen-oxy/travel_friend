@@ -93,11 +93,11 @@ class LocationScore extends React.Component {
   function setInfo(item){
     return (
     <div className="Score Container" style={scoreContainer}>
-      <p style={textOption}>
+      <h4 style={textOption}>
         {item.name==="Connectivity"||item.name==="Commute" ? 
         (item.name==="Connectivity" ? (<span>Public Transportation Access</span>):(<span>Traffic</span>))
         :(item.name)} 
-      </p>
+      </h4>
 
       <div className="Score" style={options}> 
       <ApexChart score={item.score_out_of_10 * 10} />

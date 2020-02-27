@@ -14,26 +14,16 @@ const table_container = {
 }
 
 class LocationDiscoveryWindow extends React.Component {
-
-      image_url: "https://upload.wikimedia.org/wikipedia/commons/f/f5/EarthRender.png"
-    
-
-  
+  image_url: "https://upload.wikimedia.org/wikipedia/commons/f/f5/EarthRender.png"
   render() {
-    // let pseudo_background = {
-    //   backgroundImage: `url(${"https://upload.wikimedia.org/wikipedia/commons/f/f5/EarthRender.png"})`,
-    //   backgroundSize: "cover",
-    //   filter: `grayscale(${"90%"})`
-    // }
 
     let outer_select_container = {
       display: "flex",
       flexDirection: "row",
       justifyContent: 'center',
       paddingTop: '2vh'
-     
+
     }
-    // if (this.props.selected_city_image_url) pseudo_background.backgroundImage = `url(${this.props.selected_city_image_url})`;      
     let location_table = null;
     if (this.props.selected_city) {
 
@@ -48,7 +38,6 @@ class LocationDiscoveryWindow extends React.Component {
     return (
       <React.Fragment>
         <div style={outer_select_container}>
-          {/* <div style={pseudo_background}></div> */}
           <div style={inner_select_container}>
             <LocationSearch
               index={this.props.index}

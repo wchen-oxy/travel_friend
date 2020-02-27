@@ -6,7 +6,7 @@ const font = {
 
 const background = {
         height: '100vh',
-        background: '#EDFFD9',
+        background: '#3D348B',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -17,22 +17,29 @@ const outer_welcome_container = {
     height: '100vh',
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+   
+    
 
 }
 
 const welcome_container = {
-    width: '400px',
+    width: '450px',
     textAlign: 'center',
     color: "#3A3042",
-    paddingBottom: '10vh'
-   
+    backgroundColor: 'white',
+    borderRadius: '12px',
+    margin: '3vh',
+    paddingTop: '2vh',
+    paddingBottom: '2vh',
+    paddingLeft: '3vh',
+    paddingRight: '3vh'
+ 
 }
 
 
 
 const title_style = {
-    paddingTop: '2vh',
     paddingBottom: '2vh'
 }
 
@@ -53,15 +60,27 @@ class DetailsComponent extends React.Component{
                 <div style={outer_welcome_container}>
                 <div className='Details-Block' style={welcome_container}>
                     <h2 className='Details-Title' style={title_style}>Travel Friend</h2>
-                    <p>Insert Details Here
+                    <p>This project has been a small project for me to familiarize myself with React.
+                        I had only a couple requirements: the project had to consume an API, be built
+                        in React and be a tool that represented existing information.
                     </p>
-                <button style={detail_button} onClick={this.props.handleHomeClick}> Return </button>
+                    <p>I settled upon this basic travel app because as far as I'm aware,
+                        there is no app that synthesizes important information about a city
+                        in one click. With this app, you should be able to select a city to
+                        see relevant information such as safety, environmental quality and cost of living. 
+                        Furthermore, you can make comparisons with other cities by toggling the side by side 
+                        city comparison switch. 
+                    </p>
+                    <p>
+                        Data for this app has been sourced from the Teleport API. I'm unaware
+                        of the criteria the Teleport API uses for evaluating a city's score so when in doubt,
+                        take the given scores for a city with a grain of salt.
+                    </p>
+                <button className="button-start" onClick={this.props.handleHomeClick}>RETURN</button>
                 </div>
                
                 </div>
-                <div className='footer' style={font}>
-                    <p>Made with React</p>
-                </div>
+            
                
                 </div>
         

@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import DetailComponent from './Components/DetailComponent.js'
 import Return from './return.png';
 import './App.css';
@@ -10,72 +9,74 @@ import WelcomeComponent from './Components/WelcomeComponent.js'
 
 import LocationDiscoveryWindow from './Components/LocationDiscoveryWindowComponent.js';
 
-const app_container = {
-  backgroundColor: '#EDFFD9',
-  minHeight: "100vh"
+// const app_container = {
+//   backgroundColor: '#3D348B',
+//   minHeight: "100vh"
 
-}
+// }
 
-const header = {
-  paddingLeft: '5vh',
-  paddingTop: '2.5vh',
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-between'
+// const header = {
+//   paddingLeft: '5vh',
+//   paddingTop: '2.5vh',
+//   display: 'flex',
+//   flexDirection: 'row',
+//   justifyContent: 'space-between'
   
-}
+// }
 
-const toggle_outer_container = {
-  alignSelf: 'flex-end',
-  paddingRight: '5vh',
+// const toggle_outer_container = {
+//   alignSelf: 'flex-end',
+//   paddingRight: '5vh',
  
-}
+// }
 
-const toggle_inner_container = {
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center'
-}
+// const toggle_inner_container = {
+//   display: 'flex',
+//   flexDirection: 'column',
+//   justifyContent: 'center'
+// }
 
-const return_image = {
-  width: '40px'
-}
+// const return_image = {
+//   width: '40px',
+//   background: "transparent"
 
-const logo_button = {
-  border: 'none',
-  alignSelf: 'flex-start'
-}
+// }
 
-const main_container_options = {
-  display: "flex",
-  flexDirection: "row",
+// const logo_button = {
+//   border: 'none',
+//   alignSelf: 'flex-start',
+//   background:"#3D348B"
+// }
+
+// const main_container_options = {
+//   display: "flex",
+//   flexDirection: "row",
   
-}
-const single_window_options = {
-  paddingLeft: '15vh',
-  paddingRight: '15vh',
-  display: "flex",
-  flexDirection: "column",
- 
- 
-}
+// }
+// const single_window_options = {
+//   paddingLeft: '15vh',
+//   paddingRight: '15vh',
+//   display: "flex",
+//   flexDirection: "column",
+  
+// }
 
-const left_window_options = {
-  width: '50%',
-  paddingLeft: '10vh',
-  paddingRight: '1vh',
-  display: "flex",
-  flexDirection: "column",
+// const left_window_options = {
+//   width: '50%',
+//   paddingLeft: '10vh',
+//   paddingRight: '1vh',
+//   display: "flex",
+//   flexDirection: "column",
  
-}
-const right_window_options = {
-  width: '50%',
-  paddingLeft: '1vh',
-  paddingRight: '10vh',
-  display: "flex",
-  flexDirection: "column",
+// }
+// const right_window_options = {
+//   width: '50%',
+//   paddingLeft: '1vh',
+//   paddingRight: '10vh',
+//   display: "flex",
+//   flexDirection: "column",
  
-}
+// }
 
 class App extends React.Component {
   constructor(props) {
@@ -106,6 +107,7 @@ class App extends React.Component {
 
     }
   }
+
   detailState(){
     this.setState({step: 2})
   }
@@ -115,8 +117,6 @@ class App extends React.Component {
   homeState(){
     this.setState({step: 1})
   }
-
-
 
   handleToggleCheck(checked){
     this.setState({ checked: checked });
@@ -149,6 +149,16 @@ class App extends React.Component {
   }
 
   render() {
+    let singleWindow = 'Single-window';
+    let leftWindow = 'Left-window';
+    let rightWindow = 'Right-window';
+    let app = 'App';
+    let header = 'Header';
+    let returnButton = 'Return-button';
+    let returnImage = 'Return-image';
+    let toggleContainer = 'Toggle-container';
+    let mainContainer = 'Main-container';
+
     console.log(this.state.step);
 
     switch (this.state.step){
@@ -162,15 +172,14 @@ class App extends React.Component {
           );
 
       case(3):
-      let button;
       let main_container;
-      let windowStyle;
+      let mainContainerOrientation = '';
       console.log(this.state.checked);
       if (!this.state.checked) {
         // button = <ToggleSingleButton onClick={this.handleSingleClick} />;
-        windowStyle = {};
+        
         main_container = (
-          <div style={single_window_options}>
+          <div className={singleWindow}>
             <LocationDiscoveryWindow
               index={1}
               all_cities={this.state.all_cities}
@@ -186,15 +195,11 @@ class App extends React.Component {
       }
       else {
         // button = <ToggleDoubleButton onClick={this.handleDoubleClick} />;
-        windowStyle = {
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: 'center',
-        };
+        mainContainerOrientation = 'Main-container-orientation'
   
         main_container = (
-        <div style={main_container_options}>
-          <div style={left_window_options}>
+        <div className={mainContainer}>
+          <div className={leftWindow} >
             <LocationDiscoveryWindow
               index={1}
               all_cities={this.state.all_cities}
@@ -206,7 +211,7 @@ class App extends React.Component {
               handleCitySelection={this.handleCitySelection}
             />
           </div>
-          <div style={right_window_options}>
+          <div className={rightWindow}>
             <LocationDiscoveryWindow
               index={2}
               all_cities={this.state.all_cities}
@@ -223,7 +228,7 @@ class App extends React.Component {
       }
       return (
       
-        <div className="App" style={app_container}>
+        <div className={app} >
           {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
          
@@ -240,12 +245,12 @@ class App extends React.Component {
           </a>
         </header> */}
   
-        <header style={header}>
+        <header className={header} >
         {/* (param) => this.toggle(param) */}
           
-        <button style={logo_button} onClick={this.homeState}><img src={Return} style={return_image} alt='Return Button' /></button>
+        <button className={returnButton} onClick={this.homeState}><img src={Return} className={returnImage} alt='Return Button' /></button>
         
-        <div style={toggle_outer_container}>
+        <div className={toggleContainer} >
           {/* <div style={toggle_inner_container}> */}
             
             {/* {button} */}
@@ -256,7 +261,7 @@ class App extends React.Component {
           
         </header>
           
-          <div style={windowStyle}>
+          <div className={mainContainerOrientation}>
             {main_container}
           </div>
           

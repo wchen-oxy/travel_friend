@@ -8,6 +8,10 @@ const label_style={
     alignItems: 'center'
 
 }
+
+const font={
+color: 'white'
+}
 export default class BasicExample extends React.Component {
     // constructor() {
     //     super();
@@ -22,11 +26,12 @@ export default class BasicExample extends React.Component {
     render() {
         return (
             <label htmlFor="icon-switch" style={label_style}>
-                <span>View Mode</span>
+                <span style={font}>View Mode</span>
                 <Switch
                     height={35}
                     width={90}
                     checked={this.props.checked}
+                    offColor={'#E0E2DB'}
                     onColor={'#ff7f00'}
                     onChange={this.props.onChecked}
                     uncheckedIcon={
@@ -37,7 +42,7 @@ export default class BasicExample extends React.Component {
                                 alignItems: "center",
                                 height: "100%",
                                 fontSize: 15,
-                                color: "white",
+                                color: "black",
                                 paddingRight: 7,
                                
                             }}>

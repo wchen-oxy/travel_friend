@@ -19,7 +19,7 @@ import React from 'react';
               startAngle: -90,
               endAngle: 90,
               track: {
-                background: "#e7e7e7",
+                background: "#fff",
                 strokeWidth: '97%',
                 margin: 1, // margin is in pixels
                 dropShadow: {
@@ -39,6 +39,7 @@ import React from 'react';
                 value: {
                   offsetY: -2,
                   fontSize: '22px',
+                  color: 'white',
                   formatter: function (value) {
                     return  Math.round(value)/10
                 },

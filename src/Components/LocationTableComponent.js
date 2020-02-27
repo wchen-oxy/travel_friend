@@ -5,7 +5,7 @@ import LocationOverview from "./SubComponents/LocationOverview"
 import LocationScore from "./SubComponents/LocationScore"
 
 const table_style = {
-  
+  color: 'white'
 }
 
 const city_ratings_container = {

@@ -1,0 +1,119 @@
+/*React Logo Styling*/
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.App-dimension {
+    height: 30px;
+    width: 30px;
+}
+
+
+/* Whole Page Style */
+
+.Background {
+    height: 100vh;
+    background: #3D348B;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+
+/* Welcome Component Container*/
+
+.Outer-welcome-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+
+.Inner-welcome-container {
+    width: 400px;
+    text-align: center;
+    color: #3A3042;
+    padding-bottom: 10vh;
+}
+
+.Button-container {}
+
+.Footer {
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding-bottom: 3vh;
+}
+
+
+/* Text Styling */
+
+.Logo-image {
+    width: 200px
+}
+
+.Title {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    color: white;
+}
+
+.Description {
+    color: white;
+}
+
+
+/* Button */
+
+.Button-detail {
+    background-color: white;
+    border: none;
+    color: #ff7f00;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition-duration: 0.4s;
+    margin: 0px 20px;
+    border-radius: 8px;
+}
+
+.Button-detail:hover {
+    background-color: #d9d9d9;
+    color: #e37202;
+}
+
+.Button-start {
+    background-color: #ff7f00;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition-duration: 0.4s;
+    margin: 0px 20px;
+    border-radius: 8px;
+}
+
+.Button-start:hover {
+    background-color: #d16900;
+    color: white;
+}

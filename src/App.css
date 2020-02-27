@@ -1,3 +1,5 @@
+
+/*React Logo Styling*/
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -9,21 +11,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -33,17 +20,75 @@
   }
 }
 
-.title{
-  text-align: center;
+/* Main Divs */
+
+.App{
+  background-color:  #3D348B ;
+  min-height:  100vh 
+
 }
 
-#hero{
-  max-width: 450px;
+.Header {
+   padding-left:  5vh ;
+  padding-top:  2.5vh ;
+  display:  flex ;
+  flex-direction:  row ;
+  justify-content:  space-between 
+  
 }
 
-.align{
-  align-self: center;
+.Main-container{
+   display:  flex ;
+  flex-direction: "row";
+}
+
+.Main-container-orientation {
+ display:  flex ;
+flex-direction:  column ;
+          justify-content:  center 
+}
+
+/* Window Options for Each City */
+.Single-window {
+  padding-left:  15vh ;
+  padding-right:  15vh ;
+  display:  flex ;
+  flex-direction:  column ;
+}
+
+.Left-window {
+ width:  50% ;
+  padding-left:  10vh ;
+  padding-right:  1vh ;
+  display: "flex";
+  flex-direction: "column";
+}
+
+.Right-window {
+width:  50% ;
+  padding-left:  1vh ;
+  padding-right:  10vh ;
+  display:  flex ;
+  flex-direction:  column ;
+}
+
+/* Button */
+.Return-button{
+  border:  none ;
+  align-self:  flex-start ;
+  background:  #3D348B 
+}
+
+.Return-image {
+  width:  40px ;
+  background:  transparent 
+
+}
+
+.Toggle-container{
+   align-self:  flex-end ;
+   padding-right:  5vh ,
+ 
 }
 
 
-/* Begin my css styling */

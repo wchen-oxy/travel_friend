@@ -1,88 +1,51 @@
 import React from 'react';
 import logo from './logo.png';
+import react_logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './WelcomeComponent.css';
 
-const font = {
-    color: "#3A3042"
-}
-
-const background = {
-        height: '100vh',
-        background: '#EDFFD9',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        
-}
-
-const outer_welcome_container = {
-    height: '100vh',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center'
-
-}
-
-const welcome_container = {
-    width: '400px',
-    textAlign: 'center',
-    color: "#3A3042",
-    paddingBottom: '10vh'
-   
-}
-
-
-const image_style = {
-    width: '200px'
-
-}
-
-const title_style = {
-    paddingTop: '2vh',
-    paddingBottom: '2vh'
-}
-
-const button_container = {
-    
-
-}
-const detail_button = {
-    margin: "0px 20px"
-}
-
-const start_button = {
-    margin: "0px 20px"
-}
 
 class WelcomeComponent extends React.Component {
 
-  
+    render() {
+
+        let background = 'Background';
+        let outerWelcomeContainer = 'Outer-welcome-container';
+        let innerWelcomeContainer = 'Inner-welcome-container';
+        let logoImage = 'Logo-image';
+        let title = 'Title';
+        let description = 'Description';
+        let buttonContainer = 'Button-container';
+        let buttonDetail = 'Button-detail';
+        let buttonStart = 'Button-start';
+        let footer = 'Footer';
+        let appLogo = 'App-logo App-dimension';
 
 
-    render(){
-        return(
-         
-            <div style={background}>
-                <div style={outer_welcome_container}>
-                <div className='Welcome-Block' style={welcome_container}>
-                    <img src={logo} alt='logo' style={image_style}/>
-                    <h2 className='Home-Title' style={title_style}>Travel Friend</h2>
-                    <p>Have you ever had some trouble deciding on a city to travel to in the world? This simple app
-                       can help you quickly find and compare different cities based on several travel related criteria.
-                       Give it a shot!
-                    </p>
-                    <div className='buttons' style={button_container}>
-                <button style={detail_button} onClick={this.props.handleDetailClick}> Details </button>
-                <button style={start_button} onClick={this.props.handleResultClick}> Start </button>
+        return (
+            <div className={background}>
+                <div className={outerWelcomeContainer}>
+                    <div className={innerWelcomeContainer}>
+                        <img className={logoImage} src={logo} alt='logo' />
+                        <h2 className={title}> Travel Friend </h2>
+                        <div className={description}>
+                            <p> Have you ever had some trouble deciding on a city to travel to in the world ?
+                                This simple app can help you quickly find and compare different cities based on
+                                several travel related criteria.Give it a shot!
+                        </p>
+                        </div>
+
+                        <div className={buttonContainer} >
+                            <button className={buttonDetail} variant="flat" onClick={this.props.handleDetailClick}> DETAILS </button>
+                            <button className={buttonStart} variant="flat" onClick={this.props.handleResultClick} > START </button>
+                        </div>
+                    </div>
                 </div>
+                <div className={footer}>
+                    Made with React
+                    <img src={react_logo} className={appLogo} alt="logo" />
                 </div>
-               
-                </div>
-                <div className='footer' style={font}>
-                    <p>Made with React</p>
-                </div>
-               
-                </div>
-        
+            </div>
         );
     }
 }

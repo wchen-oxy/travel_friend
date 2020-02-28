@@ -2,7 +2,7 @@ import ReactApexChart from 'react-apexcharts'
 import React from 'react';
 
 
-  class ApexChart extends React.Component {
+  class GaugeChart extends React.Component {
     constructor(props) {
       super(props);
 
@@ -79,4 +79,4 @@ import React from 'react';
     }
   }
 
-  export default ApexChart;
+  export default GaugeChart;

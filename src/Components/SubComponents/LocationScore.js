@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './LocationScore.css';
-import ApexChart from './GaugeChart';
+import ApexChart from './GaugeChart.js';
 
 class LocationScore extends React.Component {
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './LocationScore.css';
-import ApexChart from './GaugeChart';
+import GaugeChart from './GaugeChart.js';
 
 class LocationScore extends React.Component {
 
@@ -80,7 +80,7 @@ class LocationScore extends React.Component {
       </h4>
 
       <div className={score}> 
-      <ApexChart score={item.score_out_of_10 * 10} />
+      <GaugeChart score={item.score_out_of_10 * 10} />
       </div>
      
 {/*       

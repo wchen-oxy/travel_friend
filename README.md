@@ -5,7 +5,9 @@ This is just a basic React app that I built for fun. Travel Friend will quickly 
 (the website will take a couple seconds to load if it hasn't been used in awhile)
 http://shielded-brushlands-14463.herokuapp.com/
 
-
+## To-Do
+1. It's not optimized for smaller screens like mobile
+2. The Overview container does not dynamically change based on size
 
 ## REACT AUTO-GENERATED DOCUMENTATION
 

@@ -1,3 +1,14 @@
+## Travel Friend
+This is just a basic React app that I built for fun. Travel Friend will quickly pull relevant information about a city and make it easier to make comparisons with other cities. This app pulls city data from the Teleport API.
+
+## Visit the website here!
+(the website will take a couple seconds to load if it hasn't been used in awhile)
+http://shielded-brushlands-14463.herokuapp.com/
+
+
+
+## REACT AUTO-GENERATED DOCUMENTATION
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

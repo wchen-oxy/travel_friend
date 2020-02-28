@@ -1,5 +1,5 @@
-import ReactApexChart from 'react-apexcharts'
 import React from 'react';
+import ReactApexChart from 'react-apexcharts';
 
 
   class GaugeChart extends React.Component {

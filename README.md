@@ -4,7 +4,6 @@ This is just a basic React app that I built for fun. Travel Friend will quickly 
 ## Visit the website here!
 (the website will take a couple seconds to load if it hasn't been used in awhile)
 
-
 http://shielded-brushlands-14463.herokuapp.com/
 
 ## To-Do
